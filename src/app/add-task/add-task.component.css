@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 10px 4px rgba(19,35,47,0.3);
+  border-radius: 5px;
+}
+
+h1 {
+  margin:0;
+  font-size: 1.5em;
+  color: #574F46;
+}
+
+form {
+  display: flex;
+   width: 75%;
+  padding: 15px 20px;
+  border-radius: 4px;
+}
+
+form input, select, button {
+  width: 100%;
+  margin: 0 5px;
+  height: 40px;
+  border-radius: 3px;
+  opacity: 0.8;
+  padding: 5px;
+  box-sizing: border-box;
+  border:  none;
+}
+
+form input:nth-child(1) {
+  width: 60%
+}
+
+form input:nth-child(2) {
+  width: 80%
+}
+
+form select {
+  width: 40%;
+}
+
+button {
+  width: 50%;
+  background-color: rgba(165, 190, 0, 0.616);
+  color: #fff;
+  transition: all .4 ease-out;
+}
+
+button:hover {
+  background-color: #A5BE00;
+  transform: scale(1.02);
+}

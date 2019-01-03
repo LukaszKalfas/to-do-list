@@ -1,0 +1,20 @@
+<p>Number of tasks: {{tasksDoneList.length}}</p>
+<a appButtonRemove>
+  <i [ngStyle]="{'color' : '#D80032'}" class="fas fa-trash-alt" (click)="removeAll()">
+    <span>Remove all</span>
+  </i>
+</a>
+<ul>
+  <li  @routeSlideState appDetails [date]="task.created" [task]="task" [description]="task.description" *ngFor="let task of tasksDoneList">
+    <div class="content">
+      <div>
+        <h4> {{task.name}}</h4>
+      </div>
+      <div>
+        <a appButtonRemove>
+          <i class="fas fa-trash-alt remove" (click)="remove(task)" (click)="saveTaskinDb()"></i>
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>

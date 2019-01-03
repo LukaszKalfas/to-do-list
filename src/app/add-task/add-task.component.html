@@ -1,0 +1,9 @@
+<h1>Create task</h1>
+<form @routeFadeState [formGroup]="newTaskForm" (ngSubmit)="onCreateTask()">
+  <input type="text" formControlName="name" placeholder="Name:">
+  <input type="text" formControlName="description" placeholder="Description:">
+  <select formControlName="status">
+    <option *ngFor="let status of availableStatus" [value]="status"> {{status}} </option>
+  </select>
+  <button type="submit" [disabled]="!newTaskForm.valid">Save</button>
+</form>

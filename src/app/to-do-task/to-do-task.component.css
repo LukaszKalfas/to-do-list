@@ -1,0 +1,101 @@
+ /* style about: ul, li, .content  scrollbar . fas button .remove finds in style.css - global  */
+ :host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* task numbers style */
+p:nth-child(1) {
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+}
+
+/* task details description style */
+ul li p {
+   margin-left: 55px;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+}
+
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  border: 2px solid #59777F;
+  border-radius: 3px;
+  background-color: white;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid #A5BE00;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+.statusAndIcons {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+select {
+  font-family: "Montserrat";
+  font-size: 12px;
+  height: 20px;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #59777F;
+  border-radius: 3px;
+}
+.update {
+  transition: all .3 ease-out;
+}
+.update:hover {
+  transform: scale(1.3)
+}
+.done {
+  color: #A5BE00;
+  transition: all .3 ease-out;
+}
+.done:hover {
+  transform: scale(1.3);
+}
+
+h4 {
+  position: absolute;
+  left: 70px;
+  top: 10px;
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+.active {
+  border-top: 6px solid #A5BE00;
+}
+
+.critical {
+  border-top: 6px solid  rgb(216, 0, 50);
+}

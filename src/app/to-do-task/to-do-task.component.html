@@ -1,0 +1,39 @@
+<p>Number of tasks: {{tasksList.length}}</p> <br>
+<a appDoneDetails (click)="doneChecked()">
+  <i [ngStyle]="{'color' : '#a5be00'}" class="fas fa-check-circle">
+    <span>Done checked</span>
+  </i>
+</a>
+<a appButtonRemove (click)="removeChecked()">
+  <i [ngStyle]="{'color' : '#D80032'}" class="fas fa-trash-alt">
+    <span>Remove checked</span>
+  </i>
+</a>
+<ul>
+  <li  @routeSlideState appDetails [date]="task.created" [task]="task" [description]="task.description" *ngFor="let task of tasksList" [ngClass]="{inactive: task.status === 'inactive', critical: task.status === 'critical', active: task.status === 'active' }">
+    <div class="content">
+      <div class="checkbox">
+        <input type="checkbox" (click)="takeTask(task)" [value]="task">
+      </div>
+      <div class="statusAndIcons">
+        <select [formControl]="statusForm" placeholder="status" >
+          <option value="active" [selected]="task.status === 'active'">Active</option>
+          <option value="inactive" [selected]="task.status === 'inactive'">Inactive</option>
+          <option value="critical" [selected]="task.status === 'critical'">Critical</option>
+        </select>
+        <div class="icons">
+          <a appUpdate (click)="updateStatus(task)">
+            <i class="fas fa-pen-square update"></i>
+          </a>
+          <a appButtonRemove (click)="remove(task)">
+            <i class="fas fa-trash-alt remove"></i>
+          </a>
+          <a appDoneDetails (click)="done(task)">
+            <i class="fas fa-check-circle done"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <h4>{{task.name}}</h4>
+  </li>
+</ul>

@@ -1,0 +1,19 @@
+<header>
+  <h1>TASK MANAGER</h1>
+</header>
+<app-add-task></app-add-task>
+<div class="content">
+  <nav>
+    <a routerLink="/toDoTask" routerLinkActive="active">Current tasks:</a>
+    <a routerLink="/doneTask" routerLinkActive="active">Completed tasks:</a>
+    <p class="date">{{ todayDate | date: 'H:mm dd.MM.yyyy'}}</p>
+  </nav>
+  <main  [@routeState]="getAnimationsData(rOutlet)" >
+    <router-outlet #rOutlet="outlet"></router-outlet>
+  <!-- <ngx-spinner bdColor="rgba(51,51,51,0.3)" size="large" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">
+      Loading...
+    </p>
+  </ngx-spinner> -->
+</main>
+</div>
